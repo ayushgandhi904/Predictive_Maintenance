@@ -1,0 +1,10 @@
+numpy 
+pandas
+seaborn
+matplotlib
+flask
+scikit-learn
+ipykernel
+python-dotenv
+pymysql
+# -e .
