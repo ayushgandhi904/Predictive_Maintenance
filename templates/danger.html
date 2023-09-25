@@ -4,7 +4,10 @@
     <title>Predict Maintenance Result</title>
     <style>
         body {
-            text-align: center; /* Center-align the text in the body */
+            text-align: center;
+            background-color: #d9534f; /* Red background color for danger */
+            color: #fff; /* White text color for text on the red background */
+            font-family: Arial, sans-serif;
         }
         .center {
             display: flex;
@@ -15,7 +18,7 @@
         }
         .button {
             margin-top: 20px; /* Add some spacing below the result */
-            background-color: #d9534f; /* Red background color for danger */
+            background-color: #c9302c; /* Darker red for the button */
             color: #fff; /* White text color for the button */
             padding: 10px 20px;
             text-decoration: none;
@@ -23,15 +26,19 @@
             transition: background-color 0.3s ease-in-out;
         }
         .button:hover {
-            background-color: #c9302c; /* Darker red on hover for the button */
+            background-color: #b92c28; /* Even darker red on hover for the button */
+        }
+        .danger-emoji {
+            font-size: 48px; /* Adjust the font size as needed */
         }
     </style>
 </head>
 <body>
     <div class="center">
-        <h1>Prediction Result</h1>
-        <p style="color: #d9534f;">{{ final_result }}</p>
+        <h1 class="danger-emoji">☠️ Danger: Prediction Result</h1>
+        <p>{{ final_result }}</p>
         <a href="/predict" class="button">Remaining Useful Life</a>
     </div>
 </body>
 </html>
+
