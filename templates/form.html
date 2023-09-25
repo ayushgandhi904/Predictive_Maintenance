@@ -2,54 +2,107 @@
 <html>
 <head>
     <title>Remaining Useful Life</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            color: #333;
+            margin-top: 20px;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        input[type="submit"] {
+            background-color: #0074d9;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            margin-top: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
+    <h1>Remaining Useful Life Prediction</h1>
     <form method="POST" action="/predict">
-        <label for="engine_no">Engine Number:</label>
-        <input type="number" name="engine_no" step="0.01" min="1" max="100" required><br>
+        <label for="Engine_no">Engine Number:</label>
+        <input type="number" name="Engine_no" step="1" min="1" max="100" required>
 
-        <label for="cycle_no">Time Cycle:</label>
-        <input type="number" name="cycle_no" step="0.01" min="0" max="103" required><br>
+        <label for="Cycle_no">Time Cycle:</label>
+        <input type="number" name="Cycle_no" step="1" min="0" max="103" required>
 
-        <label for="lpc_outlet_temperature">LPC Outlet Temperature (R):</label>
-        <input type="number" name="lpc_outlet_temperature" step="0.01" required><br>
+        <label for="LPC_outlet_temperature">LPC Outlet Temperature (R):</label>
+        <input type="number" name="LPC_outlet_temperature" step="0.01" required>
 
-        <label for="hpc_outlet_temperature">HPC outlet temperature (R):</label>
-        <input type="number" name="hpc_outlet_temperature" step="0.01" required><br>
+        <label for="HPC_outlet_temperature">HPC outlet temperature (R):</label>
+        <input type="number" name="HPC_outlet_temperature" step="0.01" required><br>
 
-        <label for="lpt_outlet_temperature">LPT outlet temperature (R):</label>
-        <input type="number" name="lpt_outlet_temperature" step="0.01" required><br>
+        <label for="LPT_outlet_temperature">LPT outlet temperature (R):</label>
+        <input type="number" name="LPT_outlet_temperature" step="0.01" required><br>
 
-        <label for="hpc_outlet_pressure">HPC outlet pressure (psia):</label>
-        <input type="number" name="hpc_outlet_pressure" step="0.01" required><br>
+        <label for="HPC_outlet_pressure">HPC outlet pressure (psia):</label>
+        <input type="number" name="HPC_outlet_pressure" step="0.01" required><br>
 
-        <label for="physical_fan_speed">Physical fan speed (rpm):</label>
-        <input type="number" name="physical_fan_speed" step="0.01" required><br>
+        <label for="Physical_fan_speed">Physical fan speed (rpm):</label>
+        <input type="number" name="Physical_fan_speed" step="0.01" required><br>
 
-        <label for="physical_core_speed">physical_core_speed (rpm):</label>
-        <input type="number" name="physical_core_speed" step="0.01" required><br>
+        <label for="Physical_core_speed">physical_core_speed (rpm):</label>
+        <input type="number" name="Physical_core_speed" step="0.01" required><br>
 
-        <label for="hpc_outlet_static_pressure">HPC outlet_static_pressure (psia):</label>
-        <input type="number" name="hpc_outlet_static_pressure" step="0.01" required><br>
+        <label for="HPC_outlet_static_pressure">HPC outlet_static_pressure (psia):</label>
+        <input type="number" name="HPC_outlet_static_pressure" step="0.01" required><br>
 
-        <label for="fuel_flow_ratio">Fuel flow ratio:</label>
-        <input type="number" name="fuel_flow_ratio" step="0.01" required><br>
+        <label for="Fuel_flow_ratio">Fuel flow ratio:</label>
+        <input type="number" name="Fuel_flow_ratio" step="0.01" required><br>
 
-        <label for="fan_speed">Fan speed (rpm):</label>
-        <input type="number" name="fan_speed" step="0.01" required><br>
+        <label for="Fan_speed">Fan speed (rpm):</label>
+        <input type="number" name="Fan_speed" step="0.01" required><br>
 
-        <label for="bypass_ratio">Bypass Ratio:</label>
-        <input type="number" name="bypass_ratio" step="0.01" required><br>
+        <label for="Bypass_ratio">Bypass Ratio:</label>
+        <input type="number" name="Bypass_ratio" step="0.01" required><br>
 
-        <label for="bleed_enthalpy">Bleed enthalpy:</label>
-        <input type="number" name="bleed_enthalpy" step="0.01" required><br>
+        <label for="Bleed_enthalpy">Bleed enthalpy:</label>
+        <input type="number" name="Bleed_enthalpy" step="0.01" required><br>
 
-        <label for="high_pressure_cool_air_flow">High pressure cool air flow (lbm/s):</label>
-        <input type="number" name="high_pressure_cool_air_flow" step="0.01" required><br>
+        <label for="High_pressure_cool_air_flow">High pressure cool air flow (lbm/s):</label>
+        <input type="number" name="High_pressure_cool_air_flow" step="0.01" required><br>
 
-        <label for="low_pressure_cool_air_flow">Low pressure cool air flow:</label>
-        <input type="number" name="low_pressure_cool_air_flow" step="0.01" required><br>
-      
+        <label for="Low_pressure_cool_air_flow">Low pressure cool air flow:</label>
+        <input type="number" name="Low_pressure_cool_air_flow" step="0.01" required><br>
+
         <input type="submit" value="Submit">
     </form>
 </body>
