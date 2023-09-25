@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Remaining Useful Life</title>
+</head>
+<body>
+    <form method="POST" action="/predict">
+        <label for="engine_no">Engine Number:</label>
+        <input type="number" name="engine_no" step="0.01" min="1" max="100" required><br>
+
+        <label for="cycle_no">Time Cycle:</label>
+        <input type="number" name="cycle_no" step="0.01" min="0" max="103" required><br>
+
+        <label for="lpc_outlet_temperature">LPC Outlet Temperature (R):</label>
+        <input type="number" name="lpc_outlet_temperature" step="0.01" required><br>
+
+        <label for="hpc_outlet_temperature">HPC outlet temperature (R):</label>
+        <input type="number" name="hpc_outlet_temperature" step="0.01" required><br>
+
+        <label for="lpt_outlet_temperature">LPT outlet temperature (R):</label>
+        <input type="number" name="lpt_outlet_temperature" step="0.01" required><br>
+
+        <label for="hpc_outlet_pressure">HPC outlet pressure (psia):</label>
+        <input type="number" name="hpc_outlet_pressure" step="0.01" required><br>
+
+        <label for="physical_fan_speed">Physical fan speed (rpm):</label>
+        <input type="number" name="physical_fan_speed" step="0.01" required><br>
+
+        <label for="physical_core_speed">physical_core_speed (rpm):</label>
+        <input type="number" name="physical_core_speed" step="0.01" required><br>
+
+        <label for="hpc_outlet_static_pressure">HPC outlet_static_pressure (psia):</label>
+        <input type="number" name="hpc_outlet_static_pressure" step="0.01" required><br>
+
+        <label for="fuel_flow_ratio">Fuel flow ratio:</label>
+        <input type="number" name="fuel_flow_ratio" step="0.01" required><br>
+
+        <label for="fan_speed">Fan speed (rpm):</label>
+        <input type="number" name="fan_speed" step="0.01" required><br>
+
+        <label for="bypass_ratio">Bypass Ratio:</label>
+        <input type="number" name="bypass_ratio" step="0.01" required><br>
+
+        <label for="bleed_enthalpy">Bleed enthalpy:</label>
+        <input type="number" name="bleed_enthalpy" step="0.01" required><br>
+
+        <label for="high_pressure_cool_air_flow">High pressure cool air flow (lbm/s):</label>
+        <input type="number" name="high_pressure_cool_air_flow" step="0.01" required><br>
+
+        <label for="low_pressure_cool_air_flow">Low pressure cool air flow:</label>
+        <input type="number" name="low_pressure_cool_air_flow" step="0.01" required><br>
+      
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

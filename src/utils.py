@@ -91,3 +91,16 @@ def evaluate_model(X_train, y_train, X_test, y_test, models,param):
     except Exception as e:
         logging.info("Exception as model training step")
         raise CustomException(e, sys)
+    
+#Defining Function for loading the object
+def load_object(file_path):
+    
+    try:
+        logging.info("Load oject started")        
+        with open(file_path, "rb") as file_obj:
+            logging.info("Pickle file loaded")
+            return pickle.load(file_obj)
+           
+    except Exception as e:
+        logging.info("Exception in utils load object")
+        raise CustomException(e, sys)    
